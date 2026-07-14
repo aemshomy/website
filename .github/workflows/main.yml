@@ -1,4 +1,9 @@
 name: Build and deploy Zola website
+
+env:
+  BASE_URL: https://aemshomy.github.io/website/
+  OUTPUT_DIR: public
+
 on:
   push:
     branches:
@@ -22,11 +27,16 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Build Zola + upload Pages artifact
-        uses: getzola/github-pages@v1
+      - name: Build Zola
+        uses: ./.github/actions/build
         with:
-          zola_version: v0.22.1
+          build_flags: --base-url "$BASE_URL" --output-dir "$OUTPUT_DIR"
 
+      - name: Upload Pages Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: $OUTPUT_DIR
+  
   deploy:
     runs-on: ubuntu-latest
     needs: build
