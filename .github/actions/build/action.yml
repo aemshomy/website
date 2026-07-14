@@ -6,7 +6,7 @@ inputs:
     description: "Zola version tag (e.g. v0.22.0)"
     required: false
 
-build_flags:
+  build_flags:
     description: "Extra flags passed to `zola build`"
     required: false
     default: ""
