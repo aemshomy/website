@@ -30,12 +30,12 @@ jobs:
       - name: Build Zola
         uses: ./.github/actions/build
         with:
-          build_flags: --base-url "$BASE_URL" --output-dir "$OUTPUT_DIR"
+          build_flags: --base-url ${{ env.BASE_URL }} --output-dir ${{ env.OUTPUT_DIR }}
 
       - name: Upload Pages Artifact
         uses: actions/upload-artifact@v4
         with:
-          path: $OUTPUT_DIR
+          path: ${{ env.OUTPUT_DIR }}
   
   deploy:
     runs-on: ubuntu-latest
