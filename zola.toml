@@ -7,6 +7,9 @@ compile_sass = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+theme = "terminus"
+title = "Journal"
+
 [markdown]
 
 [markdown.highlighting]
@@ -14,5 +17,3 @@ theme = "catppuccin-mocha"
 
 [extra]
 # Put all your custom variables here
-theme = "terminus"
-title = "Journal"
