@@ -4,7 +4,7 @@
 
 cd ~/Projects/website-aemshomy/ 
 
-echo "\n=== Daily Update "(date "+%d-%m-%Y")" ===" #for logging
+echo \n"=== Daily Update "(date "+%d-%m-%Y")" ===" #for logging
 
 git pull
 git add *
